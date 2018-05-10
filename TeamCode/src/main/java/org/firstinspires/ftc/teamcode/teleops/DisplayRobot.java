@@ -1,11 +1,15 @@
 package org.firstinspires.ftc.teamcode.teleops;
 
+import android.media.MediaPlayer;
+
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import org.firstinspires.ftc.teamcode.R;
+import org.firstinspires.ftc.teamcode.libs.AudioSample;
 import org.firstinspires.ftc.teamcode.robotplus.gamepadwrapper.Controller;
 import org.firstinspires.ftc.teamcode.robotplus.hardware.MecanumDrive;
 import org.firstinspires.ftc.teamcode.robotplus.hardware.Robot;
@@ -22,6 +26,7 @@ public class DisplayRobot extends OpMode {
     private Controller game1;
 
     private MecanumDrive drivetrain;
+    private AudioSample player;
 
     Servo armX;
     Servo armY;

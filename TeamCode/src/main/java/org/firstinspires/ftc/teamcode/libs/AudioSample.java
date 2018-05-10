@@ -4,6 +4,8 @@ package org.firstinspires.ftc.teamcode.libs;
 import android.app.Activity;
 import android.media.MediaPlayer;
 
+import org.firstinspires.ftc.teamcode.R;
+
 import java.io.IOException;
 
 /*
@@ -17,12 +19,13 @@ If you use our code and see us at competition, come say hello!
 
 public class AudioSample extends Activity {
     MediaPlayer mediaPlayer;
-    String PATH_TO_FILE; // relative path
+    // String PATH_TO_FILE; // relative path
 
-    public AudioSample(String path) throws IOException {
-        mediaPlayer = new  MediaPlayer();
-        this.PATH_TO_FILE = path;
-        mediaPlayer.setDataSource(PATH_TO_FILE);
+    public AudioSample() throws IOException {
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.thewordofkodak);
+        //this.PATH_TO_FILE = path;
+        /*mediaPlayer.setDataSource();
+        mediaPlayer.prepare();*/
         mediaPlayer.prepare();
     }
 
@@ -54,5 +57,4 @@ public class AudioSample extends Activity {
             mediaPlayer.stop();
         }
     }
-
 }
