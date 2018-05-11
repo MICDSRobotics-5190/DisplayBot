@@ -29,7 +29,7 @@ public class AudioTester extends OpMode {
     @Override
     public void init() {
         this.gamepad = new Controller(gamepad1);
-        this.player = MediaPlayer.create(hardwareMap.appContext, R.raw.thewordofkodak);
+        this.player = MediaPlayer.create(hardwareMap.appContext, R.raw.r2);
     }
 
     @Override

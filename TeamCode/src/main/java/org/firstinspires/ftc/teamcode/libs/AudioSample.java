@@ -22,7 +22,7 @@ public class AudioSample extends Activity {
     // String PATH_TO_FILE; // relative path
 
     public AudioSample() throws IOException {
-        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.thewordofkodak);
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.r2);
         //this.PATH_TO_FILE = path;
         /*mediaPlayer.setDataSource();
         mediaPlayer.prepare();*/

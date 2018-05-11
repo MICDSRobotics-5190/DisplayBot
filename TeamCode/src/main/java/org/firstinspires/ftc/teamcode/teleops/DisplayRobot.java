@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.teleops;
 
 import android.media.MediaPlayer;
+import android.provider.MediaStore;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -26,7 +27,7 @@ public class DisplayRobot extends OpMode {
     private Controller game1;
 
     private MecanumDrive drivetrain;
-    private AudioSample player;
+    private MediaPlayer player;
 
     Servo armX;
     Servo armY;
@@ -43,6 +44,7 @@ public class DisplayRobot extends OpMode {
 
         armX = hardwareMap.servo.get("armX");
         armY = hardwareMap.servo.get("armY");
+        player = MediaPlayer.create(hardwareMap.appContext, R.raw.r2);
         //this.armY = hardwareMap.get(CRServo.class, "armY");
     }
 
@@ -83,6 +85,9 @@ public class DisplayRobot extends OpMode {
             robot.stopMoving();
             drivetrain.stopMoving();
         }
+        if (gamepad1.a) {
+            player.start();
+        }
 
         telemetry.addData("Main1", drivetrain.getMajorDiagonal().getMotor1().getPower());
         telemetry.addData("Minor1", drivetrain.getMinorDiagonal().getMotor1().getPower());
@@ -97,5 +102,4 @@ public class DisplayRobot extends OpMode {
     public void stop() {
 
     }
-
 }
